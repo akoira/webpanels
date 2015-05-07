@@ -22,6 +22,10 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.11'
 }
 
+war {
+    from ('src/main/static');
+}
+
 
 sourceCompatibility = 1.8
 version = '1.0'
