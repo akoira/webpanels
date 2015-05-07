@@ -18,8 +18,9 @@
         sprite.position.set(230,264);
         sprite.interactive = true;
         sprite.click = onDown;
+//        sprite.touch = onDown;
 //        sprite.on('mousedown', onDown);
-//        sprite.on('touchstart', onDown);
+        sprite.on('touchstart', onDown);
 
         stage.addChild(sprite);
 
