@@ -4,55 +4,13 @@
         <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
         <script type="text/javascript" src="js/jquery.image-fit-window.js"></script>
         <script type="text/javascript" src="js/pixi.js"></script>
+        <script type="text/javascript" src="js/toggle3.js"></script>
+        <script type="text/javascript" src="js/ahcp.js"></script>
 
     </head>
     <body>
     <script>
-        var renderer = PIXI.autoDetectRenderer(800, 600,{backgroundColor : 0x1099bb});
-        document.body.appendChild(renderer.view);
-
-        // create the root of the scene graph
-        var stage = new PIXI.Container();
-
-        var sprite = PIXI.Sprite.fromImage('/img/round-down.png');
-        sprite.position.set(230,264);
-        sprite.interactive = true;
-        sprite.click = onDown;
-//        sprite.touch = onDown;
-//        sprite.on('mousedown', onDown);
-        sprite.on('touchstart', onDown);
-
-        stage.addChild(sprite);
-
-        var index = 0;
-
-        function onDown (eventData) {
-            switch(index)
-            {
-                case 0:
-                    sprite.texture = PIXI.Texture.fromImage("/img/round-norm.png");
-                    index = 1;
-                    break;
-                case 1:
-                    sprite.texture = PIXI.Texture.fromImage("/img/round-up.png");
-                    index = 2;
-                    break;
-                case 2:
-                    sprite.texture = PIXI.Texture.fromImage("/img/round-down.png");
-                    index = 0;
-                    break;
-            }
-        }
-        // start animating
-        animate();
-
-        function animate() {
-
-            requestAnimationFrame(animate);
-
-            // render the root container
-            renderer.render(stage);
-        }
+        init()
     </script>
 
 
